@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{464015D5-CA0D-42B3-88AA-D2DC6875EC01}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExamenASP_SQL</RootNamespace>
+    <AssemblyName>ExamenASP_SQL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.5.3.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.1\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\botones\Thumbs.db" />
+    <Content Include="images\calendar\Thumbs.db" />
+    <Content Include="images\iconos\Thumbs.db" />
+    <Content Include="images\logos\Thumbs.db" />
+    <Content Include="images\noAutorizado\Thumbs.db" />
+    <Content Include="images\top\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\Examen_SQL_ASP.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataTableExito\jquery-ui-1.10.3.custom.js" />
+    <Content Include="DataTableExito\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="DataTableExito\jquery.dataTables.js" />
+    <Content Include="DataTableExito\jquery.dataTables.min.js" />
+    <Content Include="estilos\EstiloPagina.css" />
+    <Content Include="estilos\images\animated-overlay.gif" />
+    <Content Include="estilos\images\sort_asc.png" />
+    <Content Include="estilos\images\sort_asc_disabled.png" />
+    <Content Include="estilos\images\sort_both.png" />
+    <Content Include="estilos\images\sort_desc.png" />
+    <Content Include="estilos\images\sort_desc_disabled.png" />
+    <Content Include="estilos\images\toolgrad.gif" />
+    <Content Include="estilos\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="estilos\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="estilos\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="estilos\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="estilos\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="estilos\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="estilos\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="estilos\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="estilos\images\ui-icons_222222_256x240.png" />
+    <Content Include="estilos\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="estilos\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="estilos\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="estilos\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="estilos\jquery-ui-1.10.3.custom.css" />
+    <Content Include="estilos\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="estilos\jquery.dataTables.css" />
+    <Content Include="estilos\jquery.dataTables_themeroller.css" />
+    <Content Include="Examen.aspx" />
+    <Content Include="images\abrir.gif" />
+    <Content Include="images\aceptar.gif" />
+    <Content Include="images\activar.gif" />
+    <Content Include="images\Adjunto.gif" />
+    <Content Include="images\alerta_amarillo.gif" />
+    <Content Include="images\alerta_rojo.gif" />
+    <Content Include="images\alerta_verde.gif" />
+    <Content Include="images\AprobEtapas.gif" />
+    <Content Include="images\AprobEtapasRevi.gif" />
+    <Content Include="images\AprobPendiente.gif" />
+    <Content Include="images\arrow.gif" />
+    <Content Include="images\arrow_off.gif" />
+    <Content Include="images\awmmenupath.gif" />
+    <Content Include="images\barra_fondo_celeste.gif" />
+    <Content Include="images\bg.gif" />
+    <Content Include="images\bgcolor.gif" />
+    <Content Include="images\bk_principal.gif" />
+    <Content Include="images\bk_principal2.gif" />
+    <Content Include="images\bk_top1.gif" />
+    <Content Include="images\bloqueo.gif" />
+    <Content Include="images\borrar.gif" />
+    <Content Include="images\botones\btn_actualizar.gif" />
+    <Content Include="images\botones\btn_add.gif" />
+    <Content Include="images\botones\btn_agregar.gif" />
+    <Content Include="images\botones\btn_anterior.gif" />
+    <Content Include="images\botones\btn_bloquear.gif" />
+    <Content Include="images\botones\btn_buscar1.gif" />
+    <Content Include="images\botones\btn_cargar.gif" />
+    <Content Include="images\botones\btn_cerrar.gif" />
+    <Content Include="images\botones\btn_compensar.gif" />
+    <Content Include="images\botones\btn_consultar.gif" />
+    <Content Include="images\botones\btn_desbloquear.gif" />
+    <Content Include="images\botones\btn_eliminar.gif" />
+    <Content Include="images\botones\btn_eliminar2.gif" />
+    <Content Include="images\botones\btn_email.gif" />
+    <Content Include="images\botones\btn_exportar.gif" />
+    <Content Include="images\botones\btn_generar.gif" />
+    <Content Include="images\botones\btn_grabar.gif" />
+    <Content Include="images\botones\btn_hand_off.gif" />
+    <Content Include="images\botones\btn_hand_on.gif" />
+    <Content Include="images\botones\btn_hijos.gif" />
+    <Content Include="images\botones\btn_imprimir.gif" />
+    <Content Include="images\botones\btn_ingresardetalle.gif" />
+    <Content Include="images\botones\btn_limpiar.gif" />
+    <Content Include="images\botones\btn_modificar.gif" />
+    <Content Include="images\botones\btn_NavAbajo.gif" />
+    <Content Include="images\botones\btn_NavAnterior.gif" />
+    <Content Include="images\botones\btn_NavAnterior_off.gif" />
+    <Content Include="images\botones\btn_NavArriba.gif" />
+    <Content Include="images\botones\btn_NavFinal.gif" />
+    <Content Include="images\botones\btn_NavFinal_off.gif" />
+    <Content Include="images\botones\btn_NavInicio.gif" />
+    <Content Include="images\botones\btn_NavInicio_off.gif" />
+    <Content Include="images\botones\btn_NavSiguiente.gif" />
+    <Content Include="images\botones\btn_NavSiguiente_off.gif" />
+    <Content Include="images\botones\btn_relacionar.gif" />
+    <Content Include="images\botones\btn_resumen.gif" />
+    <Content Include="images\botones\btn_routingmeno.gif" />
+    <Content Include="images\botones\btn_saldo.gif" />
+    <Content Include="images\botones\btn_seleccionar.gif" />
+    <Content Include="images\botones\btn_seleccionar2.GIF" />
+    <Content Include="images\botones\btn_subarea.gif" />
+    <Content Include="images\botones\btn_terminar.gif" />
+    <Content Include="images\botones\btn_traficos.gif" />
+    <Content Include="images\botones\btn_usuario.gif" />
+    <Content Include="images\botones\btn_verdatos.gif" />
+    <Content Include="images\botones\imgIngresar.gif" />
+    <Content Include="images\Browse.gif" />
+    <Content Include="images\btn_01.gif" />
+    <Content Include="images\btn_02.gif" />
+    <Content Include="images\btn_03.gif" />
+    <Content Include="images\btn_04.gif" />
+    <Content Include="images\btn_Aceptar.gif" />
+    <Content Include="images\btn_Activar.gif" />
+    <Content Include="images\btn_actualizar.gif" />
+    <Content Include="images\btn_acuerdoalq.gif" />
+    <Content Include="images\btn_acuerdopcs.gif" />
+    <Content Include="images\btn_agregamas.gif" />
+    <Content Include="images\btn_Agregar.gif" />
+    <Content Include="images\btn_AgregarGrabar.gif" />
+    <Content Include="images\btn_anpago.gif" />
+    <Content Include="images\btn_Anterior.gif" />
+    <Content Include="images\btn_anular.gif" />
+    <Content Include="images\btn_Aprobar.gif" />
+    <Content Include="images\btn_Buscar.gif" />
+    <Content Include="images\btn_calendario.gif" />
+    <Content Include="images\btn_Cancelar.gif" />
+    <Content Include="images\btn_Cerrar.gif" />
+    <Content Include="images\btn_CerrarSes.gif" />
+    <Content Include="images\btn_check.gif" />
+    <Content Include="images\btn_checklisto.gif" />
+    <Content Include="images\btn_close.gif" />
+    <Content Include="images\btn_compensar.gif" />
+    <Content Include="images\btn_contactenos.gif" />
+    <Content Include="images\btn_Continuar.gif" />
+    <Content Include="images\btn_DatosConsultaINF.gif" />
+    <Content Include="images\btn_descompensar.gif" />
+    <Content Include="images\btn_DeshNavAnterior.gif" />
+    <Content Include="images\btn_DeshNavFinal.gif" />
+    <Content Include="images\btn_DeshNavInicio.gif" />
+    <Content Include="images\btn_DeshNavSiguiente.gif" />
+    <Content Include="images\btn_devolver.gif" />
+    <Content Include="images\btn_edit.jpg" />
+    <Content Include="images\btn_eliminamenos.gif" />
+    <Content Include="images\btn_eliminar.gif" />
+    <Content Include="images\btn_etim.gif" />
+    <Content Include="images\btn_examinar.gif" />
+    <Content Include="images\btn_ExportarExcel.gif" />
+    <Content Include="images\btn_fidelizacion.gif" />
+    <Content Include="images\btn_Filtro.gif" />
+    <Content Include="images\btn_Grabar.gif" />
+    <Content Include="images\btn_IconoLupa.gif" />
+    <Content Include="images\btn_Imprimir.gif" />
+    <Content Include="images\btn_ImprimirGuia.gif" />
+    <Content Include="images\btn_InformeCrediticio.gif" />
+    <Content Include="images\btn_Informes.gif" />
+    <Content Include="images\btn_ingresar.gif" />
+    <Content Include="images\btn_Intratim.gif" />
+    <Content Include="images\btn_IrIntratim_Off.gif" />
+    <Content Include="images\btn_IrIntratim_On.gif" />
+    <Content Include="images\btn_Limpiar.gif" />
+    <Content Include="images\btn_migracion.gif" />
+    <Content Include="images\btn_minus.gif" />
+    <Content Include="images\btn_Modificar.gif" />
+    <Content Include="images\btn_MovVendedor.gif" />
+    <Content Include="images\btn_NavAbajo.gif" />
+    <Content Include="images\btn_NavAnterior.gif" />
+    <Content Include="images\btn_NavAnterior_off.gif" />
+    <Content Include="images\btn_NavArriba.gif" />
+    <Content Include="images\btn_NavFinal.gif" />
+    <Content Include="images\btn_NavFinal_off.gif" />
+    <Content Include="images\btn_NavInicio.gif" />
+    <Content Include="images\btn_NavInicio_off.gif" />
+    <Content Include="images\btn_NavSiguiente.gif" />
+    <Content Include="images\btn_NavSiguiente_off.gif" />
+    <Content Include="images\btn_NuevaConsulta.gif" />
+    <Content Include="images\btn_Nuevo.gif" />
+    <Content Include="images\btn_oculta.gif" />
+    <Content Include="images\btn_pagar.gif" />
+    <Content Include="images\btn_pagprincipal.gif" />
+    <Content Include="images\btn_plus.gif" />
+    <Content Include="images\btn_Principal.gif" />
+    <Content Include="images\btn_procesar.gif" />
+    <Content Include="images\btn_reasignacion.gif" />
+    <Content Include="images\btn_Rechazar.gif" />
+    <Content Include="images\btn_regresar_a.gif" />
+    <Content Include="images\btn_renovacion.gif" />
+    <Content Include="images\btn_reposicion.gif" />
+    <Content Include="images\btn_resumen.gif" />
+    <Content Include="images\btn_seleccionar.gif" />
+    <Content Include="images\btn_Series.gif" />
+    <Content Include="images\btn_servicios.gif" />
+    <Content Include="images\btn_siguiente.gif" />
+    <Content Include="images\btn_tips.gif" />
+    <Content Include="images\btn_UsrDetalle.gif" />
+    <Content Include="images\btn_VerArchAdj.GIF" />
+    <Content Include="images\btn_VerArchivo.gif" />
+    <Content Include="images\btn_VerDetallado.gif" />
+    <Content Include="images\btn_VerDetalle.gif" />
+    <Content Include="images\btn_VerSeguimiento.gif" />
+    <Content Include="images\btn_VerTarea.gif" />
+    <Content Include="images\bull_amarillo.gif" />
+    <Content Include="images\bull_arrowmenutop.gif" />
+    <Content Include="images\bull_arrowmenutop1.gif" />
+    <Content Include="images\bull_rojo.gif" />
+    <Content Include="images\bull_rojocelda.gif" />
+    <Content Include="images\bul_cuadritos.gif" />
+    <Content Include="images\buscar.gif" />
+    <Content Include="images\calendario.gif" />
+    <Content Include="images\calendar\btn_Calendario.gif" />
+    <Content Include="images\calendar\cal_1.gif" />
+    <Content Include="images\calendar\cal_2.gif" />
+    <Content Include="images\calendar\cal_3.gif" />
+    <Content Include="images\calendar\cal_4.gif" />
+    <Content Include="images\calendar\cal_Avanzar1.gif" />
+    <Content Include="images\calendar\cal_Avanzar2.gif" />
+    <Content Include="images\calendar\cal_retroceder1.gif" />
+    <Content Include="images\calendar\cal_retroceder2.gif" />
+    <Content Include="images\Cargando.gif" />
+    <Content Include="images\CerrarSolicitud.gif" />
+    <Content Include="images\cerrar_cita.gif" />
+    <Content Include="images\close.gif" />
+    <Content Include="images\ConsMisPendientes.gif" />
+    <Content Include="images\dot.gif" />
+    <Content Include="images\editar.gif" />
+    <Content Include="images\email.gif" />
+    <Content Include="images\error.gif" />
+    <Content Include="images\Flujo.gif" />
+    <Content Include="images\Flujo1.jpg" />
+    <Content Include="images\Flujo_1.gif" />
+    <Content Include="images\Flujo_11.gif" />
+    <Content Include="images\FondoError.jpg" />
+    <Content Include="images\fondoTab.jpg" />
+    <Content Include="images\Formulario.gif" />
+    <Content Include="images\Formulario1.gif" />
+    <Content Include="images\graf_consultas.gif" />
+    <Content Include="images\graf_divcolortop.gif" />
+    <Content Include="images\graf_ico_consultas.gif" />
+    <Content Include="images\graf_ico_error.gif" />
+    <Content Include="images\gray.png" />
+    <Content Include="images\headerbg.gif" />
+    <Content Include="images\headerCita.gif" />
+    <Content Include="images\History.gif" />
+    <Content Include="images\honey.png" />
+    <Content Include="images\iconos\ICO_Logo.gif" />
+    <Content Include="images\iconos\ICO_Logo.jpg" />
+    <Content Include="images\iconos\ico_TimWhite.gif" />
+    <Content Include="images\ico_BulletMenu.gif" />
+    <Content Include="images\ico_datos.gif" />
+    <Content Include="images\ico_edita.gif" />
+    <Content Include="images\ico_eliminar.gif" />
+    <Content Include="images\ico_Imprimir.gif" />
+    <Content Include="images\ico_lupa.gif" />
+    <Content Include="images\ico_Modificar.gif" />
+    <Content Include="images\ico_noautorizado.gif" />
+    <Content Include="images\ico_procesar.gif" />
+    <Content Include="images\ico_resumen.gif" />
+    <Content Include="images\ico_usuarios.gif" />
+    <Content Include="images\img_busqueda.gif" />
+    <Content Include="images\img_DetalleITGestion.gif" />
+    <Content Include="images\img_Home2ITGestion.gif" />
+    <Content Include="images\img_linetopblanco.gif" />
+    <Content Include="images\img_ListaReqITGestion.gif" />
+    <Content Include="images\img_marca.jpg" />
+    <Content Include="images\img_marca_cab.gif" />
+    <Content Include="images\img_nuevo.gif" />
+    <Content Include="images\ingreso.gif" />
+    <Content Include="images\ListAprobador.gif" />
+    <Content Include="images\LogoAM.gif" />
+    <Content Include="images\logoClaro.gif" />
+    <Content Include="images\logoClaroBlanco.gif" />
+    <Content Include="images\logoClaroPeque.gif" />
+    <Content Include="images\logos\hm_tim.gif" />
+    <Content Include="images\logos\logo_am.gif" />
+    <Content Include="images\logos\logo_claro.gif" />
+    <Content Include="images\logos\logo_claro_blanco.gif" />
+    <Content Include="images\logos\logo_claro_peque.gif" />
+    <Content Include="images\menuarrow.gif" />
+    <Content Include="images\mnu_cuadrado.gif" />
+    <Content Include="images\mnu_flecha.gif" />
+    <Content Include="images\mnu_flecha_abajo.gif" />
+    <Content Include="images\mnu_flecha_azul.gif" />
+    <Content Include="images\noAutorizado\btn_regresar_a.gif" />
+    <Content Include="images\noAutorizado\graf_ico_error.gif" />
+    <Content Include="images\noAutorizado\img_marca.jpg" />
+    <Content Include="images\noAutorizado\sq_pie01.gif" />
+    <Content Include="images\noAutorizado\sq_pie02.gif" />
+    <Content Include="images\noAutorizado\sq_top01.gif" />
+    <Content Include="images\noAutorizado\sq_top02.gif" />
+    <Content Include="images\pdf.gif" />
+    <Content Include="images\pp.gif" />
+    <Content Include="images\premio.gif" />
+    <Content Include="images\print.png" />
+    <Content Include="images\procesando.gif" />
+    <Content Include="images\procesando1.gif" />
+    <Content Include="images\procesando_2.gif" />
+    <Content Include="images\ProcessEnviado.gif" />
+    <Content Include="images\progress.gif" />
+    <Content Include="images\qa.gif" />
+    <Content Include="images\question.gif" />
+    <Content Include="images\rechazar.gif" />
+    <Content Include="images\Registro.gif" />
+    <Content Include="images\RegNuevasol.gif" />
+    <Content Include="images\ReportesComite.gif" />
+    <Content Include="images\save.gif" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="images\sq_pie01.gif" />
+    <Content Include="images\sq_pie02.gif" />
+    <Content Include="images\sq_top01.gif" />
+    <Content Include="images\sq_top02.gif" />
+    <Content Include="images\sup_01.gif" />
+    <Content Include="images\sup_02.gif" />
+    <Content Include="images\sup_03.gif" />
+    <Content Include="images\TabAnexos.gif" />
+    <Content Include="images\TabDatComplemen.gif" />
+    <Content Include="images\TabDatGenerales.gif" />
+    <Content Include="images\titulo.gif" />
+    <Content Include="images\toolgrad.gif" />
+    <Content Include="images\toolgrad_largo.gif" />
+    <Content Include="images\top\fnd_TopTableRed.gif" />
+    <Content Include="images\top\graf_consultas.gif" />
+    <Content Include="images\trash.gif" />
+    <Content Include="images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="images\xls.gif" />
+    <Content Include="JS_Claro\jquery-1.10.2.js" />
+    <Content Include="JS_Claro\jquery-1.10.2.min.js" />
+    <Content Include="JS_Claro\jquery-ui-1.10.3.custom.js" />
+    <Content Include="JS_Claro\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="JS_Claro\jquery.dataTables.js" />
+    <Content Include="JS_Claro\jquery.dataTables.min.js" />
+    <Content Include="JS_creados\JSEstudiantes.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Examen.aspx.cs">
+      <DependentUpon>Examen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Examen.aspx.designer.cs">
+      <DependentUpon>Examen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{43b3703d-f0c8-4694-9420-b35bfb43fcf3}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocios\CapaNegocios.csproj">
+      <Project>{a1186d86-9175-4f6f-801c-f01b4861bb86}</Project>
+      <Name>CapaNegocios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CAPA_ENTIDAD\CAPA_ENTIDAD.csproj">
+      <Project>{6344df53-61fe-467d-b911-8da301b69b42}</Project>
+      <Name>CAPA_ENTIDAD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63836</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63836/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

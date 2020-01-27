@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamenASP_SQL", "ExamenASP_SQL\ExamenASP_SQL.csproj", "{464015D5-CA0D-42B3-88AA-D2DC6875EC01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAPA_ENTIDAD", "CAPA_ENTIDAD\CAPA_ENTIDAD.csproj", "{6344DF53-61FE-467D-B911-8DA301B69B42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{43B3703D-F0C8-4694-9420-B35BFB43FCF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocios", "CapaNegocios\CapaNegocios.csproj", "{A1186D86-9175-4F6F-801C-F01B4861BB86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{464015D5-CA0D-42B3-88AA-D2DC6875EC01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{464015D5-CA0D-42B3-88AA-D2DC6875EC01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{464015D5-CA0D-42B3-88AA-D2DC6875EC01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{464015D5-CA0D-42B3-88AA-D2DC6875EC01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6344DF53-61FE-467D-B911-8DA301B69B42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6344DF53-61FE-467D-B911-8DA301B69B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6344DF53-61FE-467D-B911-8DA301B69B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6344DF53-61FE-467D-B911-8DA301B69B42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43B3703D-F0C8-4694-9420-B35BFB43FCF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B3703D-F0C8-4694-9420-B35BFB43FCF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B3703D-F0C8-4694-9420-B35BFB43FCF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B3703D-F0C8-4694-9420-B35BFB43FCF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1186D86-9175-4F6F-801C-F01B4861BB86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1186D86-9175-4F6F-801C-F01B4861BB86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1186D86-9175-4F6F-801C-F01B4861BB86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1186D86-9175-4F6F-801C-F01B4861BB86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cristhian30ch.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CAPA_ENTIDAD\\CAPA_ENTIDAD.csproj
+		SccProjectName1 = CAPA_ENTIDAD
+		SccLocalPath1 = CAPA_ENTIDAD
+		SccProjectUniqueName2 = CapaDatos\\CapaDatos.csproj
+		SccProjectName2 = CapaDatos
+		SccLocalPath2 = CapaDatos
+		SccProjectUniqueName3 = CapaNegocios\\CapaNegocios.csproj
+		SccProjectName3 = CapaNegocios
+		SccLocalPath3 = CapaNegocios
+		SccProjectUniqueName4 = ExamenASP_SQL\\ExamenASP_SQL.csproj
+		SccProjectName4 = ExamenASP_SQL
+		SccLocalPath4 = ExamenASP_SQL
+	EndGlobalSection
+EndGlobal
